@@ -58,7 +58,7 @@ public interface ApiFipe {
     * GET: https://parallelum.com.br/fipe/api/v1/carros/marcas/{codeBrand}}/modelos/{codeModel}/anos/{codeYear}
     *
     * */
-    @GetMapping("/carros/marcas/{codeBrand}}/modelos/{codeModel}/anos/{codeYear}")
+    @GetMapping("/carros/marcas/{codeBrand}/modelos/{codeModel}/anos/{codeYear}")
     VehicleDTO getSpecificVehicle(
             @PathVariable String codeBrand,
             @PathVariable String codeModel,
