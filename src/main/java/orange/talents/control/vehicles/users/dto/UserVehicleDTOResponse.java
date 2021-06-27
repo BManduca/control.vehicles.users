@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 import orange.talents.control.vehicles.users.entities.User;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 

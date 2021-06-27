@@ -13,12 +13,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class BrandVehicleDTO {
+public class ModelDTO {
 
     @JsonProperty("nome")
-    private String nameBrand;
+    private String nameModel;
 
     @JsonProperty("codigo")
-    private String codeBrand;
+    private String codeModel;
 
 }

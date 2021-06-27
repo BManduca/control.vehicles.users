@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
 
-import orange.talents.control.vehicles.users.api.dto.YearVehicleDTO;
-import orange.talents.control.vehicles.users.api.dto.BrandVehicleDTO;
-import orange.talents.control.vehicles.users.api.dto.ModelVehicleListDTO;
+import orange.talents.control.vehicles.users.api.dto.YearDTO;
+import orange.talents.control.vehicles.users.api.dto.BrandDTO;
+import orange.talents.control.vehicles.users.api.dto.ModelListDTO;
 
 
 @Service
@@ -24,37 +24,37 @@ public class ServicePriceVehicle {
 
     public String getFipePrice(String brand, String model, String year) {
 
-        getCodeBrandVehicle(brand);
-        getCodeModelVehicle(model);
-        getCodeYearVehicle(year);
+        getCodeBrand(brand);
+        getCodeModel(model);
+        getCodeYear(year);
 
         return apiFipe.getSpecificVehicle(codeBrand, codeModel, codeYear).getPrice();
 
     }
 
-    public String getCodeBrandVehicle(String nameBrandVehicle) {
+    public String getCodeBrand(String nameBrand) {
 
         codeBrand = null;
 
-        List<BrandVehicleDTO> brandsVehicle = apiFipe.getBrandVehicleList();
+        List<BrandDTO> brands = apiFipe.getBrandVehicleList();
 
-        brandsVehicle.forEach(brandVehicle -> {
-            if (brandVehicle.getNameBrand().contains(nameBrandVehicle)) {
+        brands.forEach(brandVehicle -> {
+            if (brandVehicle.getNameBrand().contains(nameBrand)) {
                 codeBrand = brandVehicle.getCodeBrand();
             }
         });
         return codeBrand;
     }
 
-    public String getCodeModelVehicle(String nameModelVehicle) {
+    public String getCodeModel(String nameModel) {
 
         codeModel = null;
 
-        ModelVehicleListDTO modelVehicleListDto = apiFipe.getModelsVehicleList(codeBrand);
+        ModelListDTO modelListDto = apiFipe.getModelsList(codeBrand);
 
-        modelVehicleListDto.getModelsList().forEach(modelVehicle -> {
-            if (modelVehicle.getNameModel().contains(nameModelVehicle)) {
-                codeModel = modelVehicle.getCodeModel();
+        modelListDto.getModelsList().forEach(model -> {
+            if (model.getNameModel().contains(nameModel)) {
+                codeModel = model.getCodeModel();
             }
         });
 
@@ -62,14 +62,14 @@ public class ServicePriceVehicle {
 
     }
 
-    public String getCodeYearVehicle(String nameYearVehicle) {
+    public String getCodeYear(String nameYear) {
 
         codeYear = null;
 
-        List<YearVehicleDTO> yearsVehicle = apiFipe.getYearsVehicleList(codeBrand, codeModel);
+        List<YearDTO> years = apiFipe.getYearsVehicleList(codeBrand, codeModel);
 
-        yearsVehicle.forEach(yearVehicle -> {
-            if (yearVehicle.getNameYear().contains(nameYearVehicle)) {
+        years.forEach(yearVehicle -> {
+            if (yearVehicle.getNameYear().contains(nameYear)) {
                 codeYear = yearVehicle.getCodeYear();
             }
         });

@@ -26,13 +26,10 @@ public class VehicleDTO {
     @NotBlank(message = "{NotBlank}")
     private String year;
 
-    @NotBlank(message = "{NotBlank}")
     private String rotationDay;
 
-    @NotBlank(message = "{NotBlank}")
     private Boolean activeRotationDay;
 
-    @NotBlank(message = "{NotBlank}")
     private String price;
 
     public VehicleDTO(Vehicle vehicleEntity) {

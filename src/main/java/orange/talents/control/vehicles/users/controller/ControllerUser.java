@@ -26,7 +26,6 @@ public class ControllerUser {
 
     @PostMapping
     public ResponseEntity<?> userCreate(
-            @Valid
             @RequestBody UserDTO userDTO) {
         return serviceUser.UserRegister(userDTO);
     }

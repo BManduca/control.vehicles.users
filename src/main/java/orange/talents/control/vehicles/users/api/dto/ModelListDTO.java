@@ -8,17 +8,16 @@ import lombok.NoArgsConstructor;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.List;
+
 @Getter
 @Setter
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class YearVehicleDTO {
+public class ModelListDTO {
 
-    @JsonProperty("nome")
-    private String nameYear;
-
-    @JsonProperty("codigo")
-    private String codeYear;
+    @JsonProperty("modelos")
+    List<ModelDTO> modelsList;
 
 }

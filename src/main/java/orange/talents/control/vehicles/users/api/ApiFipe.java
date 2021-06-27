@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import orange.talents.control.vehicles.users.api.dto.VehicleDTO;
-import orange.talents.control.vehicles.users.api.dto.YearVehicleDTO;
-import orange.talents.control.vehicles.users.api.dto.BrandVehicleDTO;
-import orange.talents.control.vehicles.users.api.dto.ModelVehicleListDTO;
+import orange.talents.control.vehicles.users.api.dto.YearDTO;
+import orange.talents.control.vehicles.users.api.dto.BrandDTO;
+import orange.talents.control.vehicles.users.api.dto.ModelListDTO;
 
 
 @FeignClient(name = "ApiFipe", url = "https://parallelum.com.br/fipe/api/v1")
@@ -22,7 +22,7 @@ public interface ApiFipe {
     * GET: https://parallelum.com.br/fipe/api/v1/carros/marcas
     * */
     @GetMapping("/carros/marcas")
-    List<BrandVehicleDTO> getBrandVehicleList();
+    List<BrandDTO> getBrandVehicleList();
 
 
     /*
@@ -32,7 +32,7 @@ public interface ApiFipe {
     * GET: https://parallelum.com.br/fipe/api/v1/carros/marcas/{codeBrand}/modelos
     * */
     @GetMapping("/carros/marcas/{codeBrand}/modelos")
-    ModelVehicleListDTO getModelsVehicleList(@PathVariable String codeBrand);
+    ModelListDTO getModelsList(@PathVariable String codeBrand);
 
 
     /*
@@ -43,7 +43,7 @@ public interface ApiFipe {
     * GET: https://parallelum.com.br/fipe/api/v1/carros/marcas/{codeBrand}}/modelos/{codeModel}/anos
     * */
     @GetMapping("/carros/marcas/{codeBrand}/modelos/{codeModel}/anos")
-    List<YearVehicleDTO> getYearsVehicleList(
+    List<YearDTO> getYearsVehicleList(
             @PathVariable String codeBrand,
             @PathVariable String codeModel
     );
