@@ -2,7 +2,7 @@ package orange.talents.control.vehicles.users.services;
 
 import java.util.List;
 
-import orange.talents.control.vehicles.users.api.ApiFipe;
+import orange.talents.control.vehicles.users.api.consumer.FipeConsumer;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
@@ -16,7 +16,7 @@ import orange.talents.control.vehicles.users.api.dto.ModelListDTO;
 public class ServicePriceVehicle {
 
     @Autowired
-    private ApiFipe apiFipe;
+    private FipeConsumer fipeConsumer;
 
     private String codeBrand;
     private String codeModel;
@@ -28,7 +28,7 @@ public class ServicePriceVehicle {
         getCodeModel(model);
         getCodeYear(year);
 
-        return apiFipe.getSpecificVehicle(codeBrand, codeModel, codeYear).getPrice();
+        return fipeConsumer.getSpecificVehicle(codeBrand, codeModel, codeYear).getPrice();
 
     }
 
@@ -36,7 +36,7 @@ public class ServicePriceVehicle {
 
         codeBrand = null;
 
-        List<BrandDTO> brands = apiFipe.getBrandVehicleList();
+        List<BrandDTO> brands = fipeConsumer.getBrandVehicleList();
 
         brands.forEach(brandVehicle -> {
             if (brandVehicle.getNameBrand().contains(nameBrand)) {
@@ -50,7 +50,7 @@ public class ServicePriceVehicle {
 
         codeModel = null;
 
-        ModelListDTO modelListDto = apiFipe.getModelsList(codeBrand);
+        ModelListDTO modelListDto = fipeConsumer.getModelsList(codeBrand);
 
         modelListDto.getModelsList().forEach(model -> {
             if (model.getNameModel().contains(nameModel)) {
@@ -66,7 +66,7 @@ public class ServicePriceVehicle {
 
         codeYear = null;
 
-        List<YearDTO> years = apiFipe.getYearsVehicleList(codeBrand, codeModel);
+        List<YearDTO> years = fipeConsumer.getYearsVehicleList(codeBrand, codeModel);
 
         years.forEach(yearVehicle -> {
             if (yearVehicle.getNameYear().contains(nameYear)) {

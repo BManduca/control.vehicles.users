@@ -1,4 +1,4 @@
-package orange.talents.control.vehicles.users.api;
+package orange.talents.control.vehicles.users.api.consumer;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import orange.talents.control.vehicles.users.api.dto.BrandDTO;
 import orange.talents.control.vehicles.users.api.dto.ModelListDTO;
 
 
-@FeignClient(name = "ApiFipe", url = "https://parallelum.com.br/fipe/api/v1")
-public interface ApiFipe {
+@FeignClient(name = "FipeConsumer", url = "https://parallelum.com.br/fipe/api/v1")
+public interface FipeConsumer {
     //material base -> http://deividfortuna.github.io/fipe/
 
     /*

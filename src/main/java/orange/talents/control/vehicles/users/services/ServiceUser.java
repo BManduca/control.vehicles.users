@@ -47,7 +47,7 @@ public class ServiceUser {
 
         if (repositoryUser.findById(id).isEmpty()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body("Usuário não foi encontrado no sistema, favor verificar a consistência do id!");
+                    .body("Usuário não foi encontrado em nosso sistema, favor verificar a veracidade do id!");
         }
 
         User user = repositoryUser.findById(id).get();
