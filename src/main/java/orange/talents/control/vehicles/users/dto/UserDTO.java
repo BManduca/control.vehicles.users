@@ -20,7 +20,6 @@ import java.time.LocalDate;
 public class UserDTO {
 
     private Long id;
-
     @NotBlank(message = "{NotBlank}")
     @Size(min=5, max=100)
     private String name;

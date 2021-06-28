@@ -11,7 +11,6 @@ import orange.talents.control.vehicles.users.repository.RepositoryUser;
 
 
 @Service
-
 public class ServiceUser {
 
     @Autowired
