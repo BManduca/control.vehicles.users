@@ -57,6 +57,8 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 * Inicialmente, a linguagem Java, que na verdade não é apenas uma linguagem em si, mas uma plataforma de desenvolvimento, onde é possível ter acesso a uma forte comunidade, grande número de frameworks, através do próprio Java é possível rodar/acessar muitas outras linguagens, fazendo com que o Java, seja uma tecnologia bem poderá, entre outros pontos. 
 
 * Busquei selecionar alguns starters do próprio Spring para auxiliar na construção desta API, como, por exemplo: Spring Boot, Spring Web, Spring Data, MySql, Spring Cloud OpenFeign e a biblioteca Lombok.
+
+  
   
 
   * Spring Boot
@@ -67,24 +69,34 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 
       
 
+      
+
   * Spring Web
 
     * Inicialmemente, por se tratar de um conjunto de imnterfaces no contexto de desenvolvimento Web (API), com padrão arquitetural Rest, este framework, foi escolhido com base ao suporte fornecido, tanto para o build da aplicação em si quanto para a assitência fornecido ao protocolo HTTP, já que todas as requisições serão feitas para a API, além do Spring MVC, que é um módulo do spring que auxília a na criação de aplicações Web de maneira simples, fácil e de uma forma elegante e também mantém a arquitetura do projeto mais organizada, separando as camadas de aplciação de acordo com a determinada funcionalidade.
+
+      
       
 
   * Spring Data JPA
 
     * O Acesso aos dados, com base no uso deste framework, acaba se tornando mais fluído e mais simples, através das anotações para o mapeamento das classes Java, às entidades do banco de dados, seus relacionamentos e à persistência dos dados. Com base na implementação do Hibernate, que tem total base na especificação JPA, desta forma, é possível utilizar todos os métodos já disponíveis, tanto para efetuar consultas, inserções, atualizações quanto para deleção de dados, por exemplo. Além de que, existe a possibilidade pré-estabelecida do Spring Data ou com base na elaboração de queries bem mais representativas.
+
+      
       
 
   * MySql
 
     * A opção por este SGBD em específico, por ser um banco de dados open source bem conhecido pelas questões de consistência, alta performance, confiabilidade e tem a facilidade de uso. Por outro lado,  tambpem foi analisado a questão de implementação baseado no sistema web através do Heroku, que é uma plataforma que tem atuação como PaaS (Plataform as a Service), que permite hospedagem, configuração, testagem e publicação de projetos virtuais na nuvem. Entre outras funções, ele busca facilitar o trabalho dos desenvolvedores na configuração e infraestrutura para o deploy, ou seja, a implantação das aplicações em si.
+
+      
       
 
   * Spring Cloud OpenFeign
 
     * O Spring Cloud OpenFeign é um client Rest declarativo para aplicações Spring Boot, onde por meio de configurações automáticas, vinculação ao Spring Enviroment e ouitras expressões do modelo de programa Spring, tornando assim que seja simples escrever clientes webservice, pois, de alguma forma basta que seja desenvolvido a interface com o serviço sem se preocupar em preparar todos os aspectos de comunicação, agilizando e deixando mais performático todo nosso desenvolver da aplicação, eses forma alguns pontos em decisão, que resultou na escolha do OpenFeign.
+
+      
       
 
   * Biblioteca Lombok
@@ -122,7 +134,7 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 
 * A estrutura do projeto em si, foi totalmente baseada no padrão MVC, ou seja, dividido em camadas, composta pelos seguintes pacotes(packages): api.consumer, api.dto, controller, dto, entites, repository e services, onde o devido foco era separar cada responsabilidade, da maneira que cada um só tenha conhecimento de outro 'elemento', quando for necessário.
 
-  ![estrutura_projeto](media/estrutura_projeto.png)
+  <img src="media/estrutura_projeto.png" alt="estrutura_projeto"  style="zoom:65%;" />
 
   
   * A interface FipeConsumer, presente no package api, foi pensada e desenvolvida para efetuar todo o consumo da APi da Fipe, através do client Rest Spring Cloud OpenFeign, trazendo assim todas as requisições pertinentes, para que fosse retornado todos os dados dos veículos da Fipe e assim, dando forma a todo contéudo necessário para construir toda a API Rest.
@@ -137,35 +149,31 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 
       * Com principal intuito de combinar os dados nome e código da marca, para as devidas solicitações que serão efetuadas;
 
-        ![BrandDTO](media/BrandDTO.png)
-        
+        <img src="media/BrandDTO.png" alt="BrandDTO" style="zoom:67%;" />
 
     * ModelDTO
 
       * Com principal intuito de combinar os dados nome e código do modelo, para as devidas solicitações que serão efetuadas;
 
-        ![ModelDTO](media/ModelDTO.png)
-        
+        <img src="media/ModelDTO.png" alt="ModelDTO" style="zoom:67%;" />
 
     * ModelListDTO
 
       * Com principal intuito de combinar os dados da lista de modelos dos veículos, para as devidas solicitações que serão efetuadas;
 
-        ![ModelListDTO](media/ModelListDTO.png)
-        
+        <img src="media/ModelListDTO.png" alt="ModelListDTO" style="zoom:67%;" />
 
     * VehicleDTO
 
       * Com principal intuito de combinar os dados marca, modelo, ano do modelo, combustível, código Fipe, mês de referência, tipo de véiculo, Sigla do combustível e o valor do veículo, para as devidas solicitações que seão efetuadas;
 
-        ![VehicleDTO](media/VehicleDTO.png)
-        
+        <img src="media/VehicleDTO.png" alt="VehicleDTO" style="zoom:67%;" />
 
     * YearDTO
 
       * Com principal intuito de combinar os dados ano e código do ano do veículo, para as devidas solicitações que serão efetuadas;
 
-        ![YearDTO](media/YearDTO.png)
+        <img src="media/YearDTO.png" alt="YearDTO" align="left" style="zoom:67%;" />
 
         
 
@@ -175,15 +183,13 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 
       * Controller para efetuar registro de novos users através de uma requisição POST, ou seja, será efetuado uma requisição adicionando um novo user no banco de acordo com a passagem correta de informações para o cadastro e também a listagem de veículos de acordo com o ID de cada user, que ao ser passado para a requisição, retornará todos os veículos registrados para um user em específico.
 
-        ![ControllerUser](media/ControllerUser.png)
-        
+        <img src="media/ControllerUser.png" alt="ControllerUser" style="zoom:67%;" />
 
     * ControllerVehicle
 
       * Controller para efetuar registro de um novo veículo para um user específico através de uma requisição POST, ou seja, será efetuado uma requisição adicionando um novo veículo para um user no banco de acordo com a passagem correta das informações do veículo para um ID de usuário.
 
-        ![ControllerVehicle](media/ControllerVehicle.png)
-        
+        <img src="media/ControllerVehicle.png" alt="ControllerVehicle" style="zoom:67%;" />
 
   * Os dtos tanto para os usuários, quanto para os veículos e para a listagem de veiculos para um usuário, foram desenvolvidos da seguinte forma:
 
@@ -195,14 +201,13 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 
       * Foi utilizado o @Email, para verificar se o campo possui as características de um endereço de e-mail.
 
-        ![UserDTO](media/UserDTO.png)
-        
+        <img src="media/UserDTO.png" alt="UserDTO" style="zoom:67%;" />
 
     * UserVehicleDTOResponse
 
       * DTO criado com intuito de combinar os dados ID, nome, email, cpf, dia do aniversário do usuário e a listagem de veículos registrado para cada usuário, especificado através do seu ID, criando também assim um construtor passando como parâmetro a entidade usuário e em cada variável armazenar seu devido valor através dos gets e em específico na variavel aonde armazenario os veículos é realizado o mapeamento dos veículos para cada entidade de usuário, retornando assim a lista dos veículos.
 
-        ![UserVehicleDTOResponse](media/UserVehicleDTOResponse.png)
+        <img src="media/UserVehicleDTOResponse.png" alt="UserVehicleDTOResponse" align="left" style="zoom:67%;" />
 
         
 
@@ -212,7 +217,7 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 
       * Foi especificado que alguns campos como marca, modelo e ano não podem permanecer em branco, ou seja, são obrigatórios.
 
-        ![VehicleDTO](media/VehicleDTO.png)
+        <img src="media/VehicleDTO.png" alt="VehicleDTO" align="left" style="zoom:67%;" />
 
         
 
@@ -222,15 +227,13 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 
       * A entidade User foi pensada com base no problema proposto, onde teria seus dados repassados, ou seja, id, nome, email, cpf, data de aniversário e a lista de veículos registrada para cada usuário através do seu ID.
 
-        ![User](media/User.png)
-        
+        <img src="media/User.png" alt="User" style="zoom:67%;" />
 
     * Vehicle
 
       * A entidade Vehicle foi pensada com base nio problema prosposto, onde teria também seus dados repassados, ou seja, id, marca, modelo, ano, dia de rodízio, se op dia de rodízio estava ativo, valor do veículo e o user, relacionado através da coluna ID do user, para assim, 'montar' a lista de veículos pertencente ao usuário.
 
-        ![Vehicle](media/Vehicle.png)
-        
+        <img src="media/Vehicle.png" alt="Vehicle" style="zoom:67%;" />
 
   * Os repositorys tanto para usuários quanto para os veículos, foram desenvolvidos da seguinte forma: 
 
@@ -240,15 +243,13 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 
       * foi desenvolvida, como dito anteriormente estendendo da JpaRepository para ter o métodos necessários de CRUD e com duas verificações, onde o intuito, é analisar se o email inserido, já esta cadastrado no sistema e também se o cpf inserido, já esta cadastrado no sistema.
 
-        ![RepositoryUser](media/RepositoryUser.png)
-        
+        <img src="media/RepositoryUser.png" alt="RepositoryUser" style="zoom:80%;" />
 
     * A interface RepositoryVehicle
 
       * foi desenvolvida, como dito anteriormente estendendo da JpaRepository para ter o métodos necessários de CRUD e não foi designado nenhum tipo de verificação, como para o usuário.
 
-        ![RepositoryVehicle](media/RepositoryVehicle.png)
-        
+        <img src="media/RepositoryVehicle.png" alt="RepositoryVehicle" style="zoom:80%;" />
 
   * Os services criado para o usuário, veículo, dia de rodízio e preço do veículo, foram desenvolvidos da seguinte forma:
 
@@ -256,21 +257,19 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 
       * este service foi desenvolvido com intuito de retornar um veículo em específico, o código da marca de um veículo,  o código do modelo de um veículo e o código do ano de um veículo, através de algumas funções desenvolvidas dentro do service.
 
-        ![ServicePriceVehicle](media/ServicePriceVehicle.png)
-        
+        <img src="media/ServicePriceVehicle.png" alt="ServicePriceVehicle" style="zoom:67%;" />
 
     * ServiceRotationDay
 
       * Este service foi desenvolvido com intuito de retornar o dia de rodízio do veículo e se caso o seu dia de rodízio esta ou não ativo.
 
-        ![ServiceRotationDay](media/ServiceRotationDay.png)
-        
+        <img src="media/ServiceRotationDay.png" alt="ServiceRotationDay" style="zoom:67%;" />
 
     * ServiceUser
 
       * Este service foi desenvolvido com intuito de verificar o registro de usuário, fazendo a verificação se caso o email ou cpf já consta no sistema, se caso não, o registro é efetuado com sucesso e também faz análise se existe o registro de um veículo para determinado usuário através do ID do mesmo, caso não existir é retornado uma mensagem, caso, seja encontrado é retornado para usuário.
 
-        ![ServiceUser](media/ServiceUser.png)
+        <img src="media/ServiceUser.png" alt="ServiceUser" align="left" style="zoom:67%;" />
 
         
 
@@ -278,7 +277,7 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 
       * Este service foi desenvolvido com intuito de verificar o registro de veículo, dentro da verificação, é analisado a veracidade do ID do usuário, são 'coletadas' todas as informações do veículo e caso seja encontrado a informação do usuário, as informalções do veículo são guardadas no repository, retorna que a requisição foi efetuada com sucesso e retorna também para op usuário o veículo cadastrado.
 
-        ![ServiceVehicle](media/ServiceVehicle.png)
+        <img src="media/ServiceVehicle.png" alt="ServiceVehicle" align="left" style="zoom:67%;" />
 
 
 
@@ -286,35 +285,37 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 
 * Teste cadastro de usuário:
 
-  ![POST_USER_OK](media/POST_USER_OK.png)
+  <img src="media/POST_USER_OK.png" alt="POST_USER_OK" align="left" style="zoom:67%;" />
 
   
 
 * Teste cadastro de usuário para verificar email:
 
-  ![POST_USER_ERROR_EMAIL](media/POST_USER_ERROR_EMAIL.png)
+  <img src="media/POST_USER_ERROR_EMAIL.png" alt="POST_USER_ERROR_EMAIL" align="left" style="zoom:67%;" />
+
+  
 
 * Teste cadastro de usuário para verificar cpf:
 
-  ![POST_USER_ERROR_CPF](media/POST_USER_ERROR_CPF.png)
+  <img src="media/POST_USER_ERROR_CPF.png" alt="POST_USER_ERROR_CPF" align="left" style="zoom:67%;" />
 
   
 
 * Teste cadastro de veículo para usuário:
 
-  ![POST_VEHICLE_USER_CADASTRO_OK](media/POST_VEHICLE_USER_CADASTRO_OK.png)
+  <img src="media/POST_VEHICLE_USER_CADASTRO_OK.png" alt="POST_VEHICLE_USER_CADASTRO_OK" align="left" style="zoom:67%;" />
 
   
 
 * Teste para retornar veículos de um usuário com ID = 1, com veículos cadastrados:
 
-  ![GET_USER_CARS_OK](media/GET_USER_CARS_OK.png) 
+  <img src="media/GET_USER_CARS_OK.png" alt="GET_USER_CARS_OK" style="zoom:67%;" /> 
 
   
 
 * Teste para retornar veículos de um usuário com ID = 2, sem veículos cadastrados:
 
-  ![GET_USER_CARS_VAZIO](media/GET_USER_CARS_VAZIO.png) 
+  <img src="media/GET_USER_CARS_VAZIO.png" alt="GET_USER_CARS_VAZIO" style="zoom:67%;" /> 
 
 
 
