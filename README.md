@@ -1,7 +1,6 @@
 <h1 align="center">
   <span> Desafio Zup -> Orange Talents -> 2021 </span>
 </h1>
-<<<<<<< HEAD
 <h2>Sobre o Desafio (Projeto)</h2>
 
 <ul>
@@ -42,6 +41,3 @@
 
 
 <h2>Iniciando o desafio</h2>
-=======
->>>>>>> b38ff5c09c4fd912c465a7e007f75996ed9f6fb5
-
