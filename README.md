@@ -24,7 +24,7 @@
            <li>Final 6-7: quinta-feira</li>
            <li>Final 8-9: sexta-feira</li>
          </ul>
-         <li></li>
+         <li>Também deve ser criado um atributo de rodízio ativo, que irá comparar a data atual do sistema com as condicionais anteriores e, quando for o dia ativo do rodízio, retornará *true*, caso contrário, *false*.</li>
        </ol>
     </ul>
   </ul>
