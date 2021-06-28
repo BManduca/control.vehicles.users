@@ -332,9 +332,30 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 * Foi de todas as formas, muito gratificante ter a experiência de pode desenvolver e explicar como foi solicitado, digamos passo a passo toda a aplicação, o proque foi escolhido as ferramentas utilizadas, com tudo isso, adquirindo mais confiança e conhecimento no desenvolver e até mesmo no ambiente do Spring Boot.
 * Para poder efetuar um pouco do item bônus, escolhi utilizar o OpenFeign, que de longe foi uma grande oportunidade, para entender melhor sua funcionalidade, ver todo o processo fluindo como esperado no final e os dados todos sendo consumidos e posteriormente sendo armazenados no banco, foi totalmente gratificante.
 
+## Executando Projeto
+
+* Para executar projeto, recomendo ter java e maven instalado em sua máquina
+* Efetuar clone 
+  * git clone https://github.com/BManduca/control.vehicles.users.git
+
+* Acessar diretorio pelo terminal
+
+  * cd ../control.vehicles.users
+    
+
+* Para compilar projeto pelo terminal
+
+  * mvn clean install
+
+    
+
+* Para rodar projeto pelo terminal
+
+  * mvn spring-boot:run
+
 ## Código Completo
 
-* Repositório com código completo, se encontra disponível em: 
+* Repositório com código completo, se encontra disponível em: https://github.com/BManduca/control.vehicles.users
   
 
   ## 
