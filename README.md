@@ -9,6 +9,7 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
   + [Testes](#testes)
   + [Implementação do sistema na Web](#implementação-do-sistema-na-web)
   + [Considerações Finais](#considerações-finais)
+  + [Executando Projeto](#executando-projeto)
   + [Código Completo](#código-completo)
 
 
