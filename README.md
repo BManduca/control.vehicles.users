@@ -15,8 +15,8 @@
     <ul>
        <li>Você deve construir 3 endpoints neste sistema, o cadastro do usuário, o cadastro de veículo e a listagem dos veículos para um usuário em específico.</li>
        <li>No endpoint que listará seus veículos, devemos considerar algumas configurações a serem exibidas para o usuário final. Será preciso criar dois novos atributos no objeto do carro, sendo eles: </li>
-       <ul>
-         <li>1) Dia do rodízio deste carro, baseado no último dígito do ano do veículo, considerando as condicionais:</li>
+       <ol>
+         <li>Dia do rodízio deste carro, baseado no último dígito do ano do veículo, considerando as condicionais:</li>
          <ul>
            <li>Final 0-1: segunda-feira</li>
            <li>Final 2-3: terça-feira</li>
@@ -25,7 +25,7 @@
            <li>Final 8-9: sexta-feira</li>
          </ul>
          <li></li>
-       </ul>
+       </ol>
     </ul>
   </ul>
 </ul>
