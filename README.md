@@ -302,8 +302,7 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 
       * Este service foi desenvolvido com intuito de verificar o registro de usuário, fazendo a verificação se caso o email ou cpf já consta no sistema, se caso não, o registro é efetuado com sucesso e também faz análise se existe o registro de um veículo para determinado usuário através do ID do mesmo, caso não existir é retornado uma mensagem, caso, seja encontrado é retornado para usuário.
       
-      ![](media/.png)
-        <img src="media/ServiceUser.png" alt="ServiceUser" align="left" style="zoom:67%;" />
+      ![ServiceUser](media/ServiceUser.png)
 
 
 
