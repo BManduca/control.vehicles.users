@@ -331,7 +331,6 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 * Teste cadastro de usuário para verificar cpf:
 
 ![POST_USER_ERROR_CPF](media/POST_USER_ERROR_CPF.png)
-  <img src="media/POST_USER_ERROR_CPF.png" alt="POST_USER_ERROR_CPF" align="left" style="zoom:67%;" />
 
 
 
