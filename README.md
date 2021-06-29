@@ -118,6 +118,8 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 
 
 
+
+
 ## Estrutura e inicialização do Projeto
 
 * Para iniciarmos o projeto, iremos utilizar um banco de dados para persistir todas as informações, desta forma, iremos utilizar o MySQl e será preciso fazer algumas configurações no arquivo application.properties, para o Hibernate/JPA obter informações de acesso ao banco de dados.
@@ -132,14 +134,23 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
     spring.jpa.database-platform = org.hibernate.dialect.MySQL5Dialect
     ```
 
+
+
 * A estrutura do projeto em si, foi totalmente baseada no padrão MVC, ou seja, dividido em camadas, composta pelos seguintes pacotes(packages): api.consumer, api.dto, controller, dto, entites, repository e services, onde o devido foco era separar cada responsabilidade, da maneira que cada um só tenha conhecimento de outro 'elemento', quando for necessário.
 
   <img src="media/estrutura_projeto.png" alt="estrutura_projeto"  style="zoom:65%;" />
 
   
+
+  
+
+  
+
   * A interface FipeConsumer, presente no package api, foi pensada e desenvolvida para efetuar todo o consumo da APi da Fipe, através do client Rest Spring Cloud OpenFeign, trazendo assim todas as requisições pertinentes, para que fosse retornado todos os dados dos veículos da Fipe e assim, dando forma a todo contéudo necessário para construir toda a API Rest.
 
-    ![](media/.png)
+    <img src="media/FipeConsumer.png" alt="FipeConsumer" align="left" style="zoom:67%;" />
+
+  
 
   
 
@@ -151,11 +162,19 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 
         <img src="media/BrandDTO.png" alt="BrandDTO" style="zoom:67%;" />
 
+    
+
+    
+
     * ModelDTO
 
       * Com principal intuito de combinar os dados nome e código do modelo, para as devidas solicitações que serão efetuadas;
 
         <img src="media/ModelDTO.png" alt="ModelDTO" style="zoom:67%;" />
+
+    
+
+    
 
     * ModelListDTO
 
@@ -163,11 +182,19 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 
         <img src="media/ModelListDTO.png" alt="ModelListDTO" style="zoom:67%;" />
 
+    
+
+    
+
     * VehicleDTO
 
       * Com principal intuito de combinar os dados marca, modelo, ano do modelo, combustível, código Fipe, mês de referência, tipo de véiculo, Sigla do combustível e o valor do veículo, para as devidas solicitações que seão efetuadas;
 
         <img src="media/VehicleDTO.png" alt="VehicleDTO" style="zoom:67%;" />
+
+    
+
+    
 
     * YearDTO
 
@@ -175,7 +202,9 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 
         <img src="media/YearDTO.png" alt="YearDTO" align="left" style="zoom:67%;" />
 
-        
+  
+
+  
 
   * Os controllers tanto para os usuários quanto para os veículos, foram desenvolvidos da seguinte forma:
 
@@ -183,13 +212,25 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 
       * Controller para efetuar registro de novos users através de uma requisição POST, ou seja, será efetuado uma requisição adicionando um novo user no banco de acordo com a passagem correta de informações para o cadastro e também a listagem de veículos de acordo com o ID de cada user, que ao ser passado para a requisição, retornará todos os veículos registrados para um user em específico.
 
-        <img src="media/ControllerUser.png" alt="ControllerUser" style="zoom:67%;" />
+        <img src="media/ControllerUser.png" alt="ControllerUser" align="left" style="zoom:67%;" />
+
+        
+
+    
+
+    
 
     * ControllerVehicle
 
       * Controller para efetuar registro de um novo veículo para um user específico através de uma requisição POST, ou seja, será efetuado uma requisição adicionando um novo veículo para um user no banco de acordo com a passagem correta das informações do veículo para um ID de usuário.
 
         <img src="media/ControllerVehicle.png" alt="ControllerVehicle" style="zoom:67%;" />
+
+  
+
+  
+
+  
 
   * Os dtos tanto para os usuários, quanto para os veículos e para a listagem de veiculos para um usuário, foram desenvolvidos da seguinte forma:
 
@@ -203,6 +244,12 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 
         <img src="media/UserDTO.png" alt="UserDTO" style="zoom:67%;" />
 
+    
+
+    
+
+    
+
     * UserVehicleDTOResponse
 
       * DTO criado com intuito de combinar os dados ID, nome, email, cpf, dia do aniversário do usuário e a listagem de veículos registrado para cada usuário, especificado através do seu ID, criando também assim um construtor passando como parâmetro a entidade usuário e em cada variável armazenar seu devido valor através dos gets e em específico na variavel aonde armazenario os veículos é realizado o mapeamento dos veículos para cada entidade de usuário, retornando assim a lista dos veículos.
@@ -210,6 +257,10 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
         <img src="media/UserVehicleDTOResponse.png" alt="UserVehicleDTOResponse" align="left" style="zoom:67%;" />
 
         
+
+    
+
+    
 
     * VehicleDTO
 
@@ -219,7 +270,11 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 
         <img src="media/VehicleDTO.png" alt="VehicleDTO" align="left" style="zoom:67%;" />
 
-        
+  
+
+  
+
+  
 
   * As entidades tanto para os usuários quanto para os veículos, foram desenvolvidos da seguinte forma:
 
@@ -229,11 +284,23 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 
         <img src="media/User.png" alt="User" style="zoom:67%;" />
 
+    
+
+    
+
+    
+
     * Vehicle
 
       * A entidade Vehicle foi pensada com base nio problema prosposto, onde teria também seus dados repassados, ou seja, id, marca, modelo, ano, dia de rodízio, se op dia de rodízio estava ativo, valor do veículo e o user, relacionado através da coluna ID do user, para assim, 'montar' a lista de veículos pertencente ao usuário.
 
         <img src="media/Vehicle.png" alt="Vehicle" style="zoom:67%;" />
+
+  
+
+  
+
+  
 
   * Os repositorys tanto para usuários quanto para os veículos, foram desenvolvidos da seguinte forma: 
 
@@ -245,11 +312,23 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 
         <img src="media/RepositoryUser.png" alt="RepositoryUser" style="zoom:80%;" />
 
+    
+
+    
+
+    
+
     * A interface RepositoryVehicle
 
       * foi desenvolvida, como dito anteriormente estendendo da JpaRepository para ter o métodos necessários de CRUD e não foi designado nenhum tipo de verificação, como para o usuário.
 
         <img src="media/RepositoryVehicle.png" alt="RepositoryVehicle" style="zoom:80%;" />
+
+  
+
+  
+
+  
 
   * Os services criado para o usuário, veículo, dia de rodízio e preço do veículo, foram desenvolvidos da seguinte forma:
 
@@ -259,11 +338,23 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 
         <img src="media/ServicePriceVehicle.png" alt="ServicePriceVehicle" style="zoom:67%;" />
 
+    
+
+    
+
+    
+
     * ServiceRotationDay
 
       * Este service foi desenvolvido com intuito de retornar o dia de rodízio do veículo e se caso o seu dia de rodízio esta ou não ativo.
 
         <img src="media/ServiceRotationDay.png" alt="ServiceRotationDay" style="zoom:67%;" />
+
+    
+
+    
+
+    
 
     * ServiceUser
 
@@ -273,11 +364,17 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 
         
 
+    
+
+    
+
     * ServiceVehicle
 
       * Este service foi desenvolvido com intuito de verificar o registro de veículo, dentro da verificação, é analisado a veracidade do ID do usuário, são 'coletadas' todas as informações do veículo e caso seja encontrado a informação do usuário, as informalções do veículo são guardadas no repository, retorna que a requisição foi efetuada com sucesso e retorna também para op usuário o veículo cadastrado.
 
         <img src="media/ServiceVehicle.png" alt="ServiceVehicle" align="left" style="zoom:67%;" />
+
+
 
 
 
@@ -287,35 +384,37 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 
   <img src="media/POST_USER_OK.png" alt="POST_USER_OK" align="left" style="zoom:67%;" />
 
-  
+
 
 * Teste cadastro de usuário para verificar email:
 
   <img src="media/POST_USER_ERROR_EMAIL.png" alt="POST_USER_ERROR_EMAIL" align="left" style="zoom:67%;" />
 
-  
+
 
 * Teste cadastro de usuário para verificar cpf:
 
   <img src="media/POST_USER_ERROR_CPF.png" alt="POST_USER_ERROR_CPF" align="left" style="zoom:67%;" />
 
-  
+
 
 * Teste cadastro de veículo para usuário:
 
   <img src="media/POST_VEHICLE_USER_CADASTRO_OK.png" alt="POST_VEHICLE_USER_CADASTRO_OK" align="left" style="zoom:67%;" />
 
-  
+
 
 * Teste para retornar veículos de um usuário com ID = 1, com veículos cadastrados:
 
   <img src="media/GET_USER_CARS_OK.png" alt="GET_USER_CARS_OK" style="zoom:67%;" /> 
 
-  
+
 
 * Teste para retornar veículos de um usuário com ID = 2, sem veículos cadastrados:
 
   <img src="media/GET_USER_CARS_VAZIO.png" alt="GET_USER_CARS_VAZIO" style="zoom:67%;" /> 
+
+
 
 
 
@@ -328,11 +427,17 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 
 
 
+
+
 ## Considerações Finais
 
 * Esta oportunidade de participar do desafio Orange Talents foi de longe, uma gigantesca oportunidade e experiência, para que fosse possível aplicar e colocar diversos conhecimentos na prática, alguns até confesso que foi encessário efetuar pesquisas e vários testes para chegar no caminho esperado e também, romper com diversas situações para construir essa API Rest. 
 * Foi de todas as formas, muito gratificante ter a experiência de pode desenvolver e explicar como foi solicitado, digamos passo a passo toda a aplicação, o proque foi escolhido as ferramentas utilizadas, com tudo isso, adquirindo mais confiança e conhecimento no desenvolver e até mesmo no ambiente do Spring Boot.
 * Para poder efetuar um pouco do item bônus, escolhi utilizar o OpenFeign, que de longe foi uma grande oportunidade, para entender melhor sua funcionalidade, ver todo o processo fluindo como esperado no final e os dados todos sendo consumidos e posteriormente sendo armazenados no banco, foi totalmente gratificante.
+
+
+
+
 
 ## Executando Projeto
 
@@ -354,6 +459,10 @@ Projeto Orange Talents 2021 - API Rest para controlar o cadastro de veículos de
 * Para rodar projeto pelo terminal
 
   * mvn spring-boot:run
+
+
+
+
 
 ## Código Completo
 
